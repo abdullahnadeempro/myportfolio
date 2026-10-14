@@ -860,3 +860,240 @@ body.light .work-card__live:hover {
     min-height: 40px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   PRELOADER — Circular Rotating Image + White Text
+   ============================================================ */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-bg {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: var(--secondary-color, #F20101);
+  transition: transform 1s ease-in-out;
+  z-index: 5;
+}
+
+.preloader-bg-one {
+  top: 0;
+}
+
+.preloader-bg-two {
+  bottom: 0;
+}
+
+/* ==================== Content Wrapper ==================== */
+.preloader-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+}
+
+/* ==================== Circular Image — ROTATES ==================== */
+.preloader-img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ✅ Outer ring rotates */
+  animation: preloaderSpin 3s linear infinite;
+}
+
+/* Red glowing ring behind image */
+.preloader-img::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--secondary-color, #F20101) 0deg,
+    transparent 90deg,
+    var(--secondary-color, #F20101) 180deg,
+    transparent 270deg,
+    var(--secondary-color, #F20101) 360deg
+  );
+  z-index: -1;
+  filter: blur(2px);
+}
+
+/* White border ring around image */
+.preloader-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 40px rgba(242, 1, 1, 0.5);
+  pointer-events: none;
+}
+
+.preloader-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  /* ✅ Image counter-rotates to stay upright */
+  animation: preloaderSpinReverse 3s linear infinite;
+}
+
+/* ==================== Welcome Text — WHITE ==================== */
+.preloader-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  animation: preloaderFadeUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.preloader-text span {
+  /* ✅ WHITE color */
+  color: #ffffff !important;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.preloader-text-name {
+  color: #ffffff !important;         /* ✅ WHITE */
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase;
+  opacity: 1 !important;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Loading Dots ==================== */
+.preloader-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: preloaderFadeUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.preloader-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;              /* ✅ WHITE dots */
+  animation: preloaderBounce 1.4s ease-in-out infinite;
+}
+
+.preloader-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.preloader-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ==================== Animations ==================== */
+@keyframes preloaderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloaderSpinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes preloaderFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preloaderBounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==================== Mobile ==================== */
+@media (max-width: 480px) {
+  .preloader-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .preloader-text-name {
+    font-size: 22px !important;
+  }
+
+  .preloader-text span {
+    font-size: 12px;
+  }
+}
