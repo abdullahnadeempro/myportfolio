@@ -120,7 +120,7 @@ export const projects = [
     tag: "Marketing",
     description: "Viral social media campaign with 1M+ reach.",
     tech: ["Instagram", "Facebook Ads"],
-    live: "https://example.com/campaign",
+    live: "https://artistic-seo-psi.vercel.app/",
     featured: false,
   },
   {
@@ -136,13 +136,13 @@ export const projects = [
   },
   {
     id: 11,
-    img: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80",
+    img: "/assets/images/work/img11.png",
     title: "Fitness Tracking App",
     category: "design",
     tag: "UI/UX",
     description: "Beautiful fitness tracking app with workout plans.",
     tech: ["Figma", "React Native"],
-    live: "https://example.com/fitness",
+    live: "https://bubun-abdullah.vercel.app/",
     featured: false,
   },
   {
