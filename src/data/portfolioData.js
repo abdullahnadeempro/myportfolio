@@ -1,54 +1,51 @@
 // ============================================================
 // PORTFOLIO DATA
 // ============================================================
-// Yahan se aap sab kuch customize kar sakte ho:
-// 1. Categories add/remove karo
-// 2. Projects add karo
-// 3. featured: true → bada card (2x height)
-//    featured: false → normal card
+// Categories add/remove karo, projects add karo.
+// Image path: "/assets/images/work/your-image.png"
 // ============================================================
 
 // ==================== CATEGORIES ====================
 export const categories = [
   { key: "all", label: "All Projects" },
-  { key: "web", label: "Web Development" },
+  { key: "single", label: "Single Page" },
   { key: "fullstack", label: "Full Stack" },
+  { key: "web", label: "Web Development" },
   { key: "marketing", label: "Marketing" },
   { key: "branding", label: "Branding" },
   { key: "design", label: "UI/UX Design" },
 ];
- 
-// import img1 from "../../public/assets/images/work/image.png"
+
 // ==================== PROJECTS ====================
 export const projects = [
   // ---------- FEATURED (Bade cards) ----------
   {
     id: 1,
-    img: "../../public/assets/images/work/img0.png",
-    title: " Food website ",
-    category: "Single page",
-    tag: "Single page",
+    img: "/assets/images/work/img0.png",
+    title: "Food Website",
+    category: "single",
+    tag: "Single Page",
     description:
       "A complete online shopping platform with product management, cart, secure checkout, and admin dashboard.",
-    tech: ["React","Single Page"],
+    tech: ["React", "Single Page"],
     live: "https://ab-food1.netlify.app/",
-    featured: true, // ← Bada card
+    featured: true,
   },
   {
     id: 2,
-    img: "../../public/assets/images/work/img1.png",
+    img: "/assets/images/work/img1.png",
     title: "Marketing Analytics Dashboard",
     category: "marketing",
     tag: "Marketing",
     description:
       "Real-time dashboard tracking SEO, social media, and paid ad performance with smart insights.",
-    tech: ["React", "Chart.js", "API", "SEO"],
+    tech: ["React", "Chart.js", "API"],
     live: "https://azurio-abdullahnadeem.netlify.app/",
     featured: true,
   },
   {
     id: 3,
-    img: "../../public/assets/images/work/img3.png",
+    img: "/assets/images/work/img3.png",
     title: "Restaurant Management System",
     category: "fullstack",
     tag: "Full Stack",
@@ -62,18 +59,18 @@ export const projects = [
   // ---------- NORMAL (Chhote cards) ----------
   {
     id: 4,
-    img: "../../public/assets/images/work/img4.png",
+    img: "/assets/images/work/img4.png",
     title: "SaaS Landing Page",
     category: "web",
     tag: "Web Dev",
     description: "Modern SaaS landing page with animations and lead capture form.",
-    tech: ["React", "Tailwind", "Framer Motion"],
+    tech: ["React", "Tailwind", "Framer"],
     live: "https://bitcoin-abdullah-nadeem.netlify.app/",
     featured: false,
   },
   {
     id: 5,
-    img: "../../public/assets/images/work/img5.png",
+    img: "/assets/images/work/img5.png",
     title: "Developer Portfolio",
     category: "web",
     tag: "Web Dev",
@@ -84,18 +81,18 @@ export const projects = [
   },
   {
     id: 6,
-    img: "../../public/assets/images/work/img6.png",
-    title: "Grocery shop software demo",
+    img: "/assets/images/work/img6.png",
+    title: "Grocery Shop Software Demo",
     category: "branding",
     tag: "Branding",
     description: "Complete brand identity — logo, colors, typography, guidelines.",
-    tech: ["Figma", "Illustrator", "Photoshop"],
+    tech: ["Figma", "Illustrator"],
     live: "https://gro-ab.vercel.app/",
     featured: false,
   },
   {
     id: 7,
-    img: "../../public/assets/images/work/img7.png",
+    img: "/assets/images/work/img7.png",
     title: "Startup Dashboard",
     category: "fullstack",
     tag: "Full Stack",
@@ -106,7 +103,7 @@ export const projects = [
   },
   {
     id: 8,
-    img: "../../public/assets/images/work/img8.png",
+    img: "/assets/images/work/img8.png",
     title: "Mobile Banking App",
     category: "design",
     tag: "UI/UX",
@@ -117,21 +114,21 @@ export const projects = [
   },
   {
     id: 9,
-    img: "../../public/assets/images/work/img9.png",
+    img: "/assets/images/work/img9.png",
     title: "Social Media Campaign",
     category: "marketing",
     tag: "Marketing",
     description: "Viral social media campaign with 1M+ reach.",
-    tech: ["Instagram", "Facebook Ads", "SEO"],
+    tech: ["Instagram", "Facebook Ads"],
     live: "https://example.com/campaign",
     featured: false,
   },
   {
     id: 10,
-    img: "../../public/assets/images/work/img10.png",
+    img: "/assets/images/work/img10.png",
     title: "Creative Agency Site",
-    category: "Single page",
-    tag: "Web Dev",
+    category: "single",
+    tag: "Single Page",
     description: "Award-winning creative agency website.",
     tech: ["React", "GSAP", "SCSS"],
     live: "https://relax-khaki-nu.vercel.app/",
@@ -166,7 +163,7 @@ export const projects = [
     category: "marketing",
     tag: "Marketing",
     description: "Data-driven marketing analytics and reporting.",
-    tech: ["Google Analytics", "SEO", "Ads"],
+    tech: ["Google Analytics", "SEO"],
     live: "https://example.com/analytics2",
     featured: false,
   },
