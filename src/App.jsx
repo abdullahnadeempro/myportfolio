@@ -10,17 +10,20 @@ import Footer from "./components/Footer";
 import TemplateOptions from "./components/TemplateOptions";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopOnRoute from "./components/ScrollToTopOnRoute";  // ← naya import
 
 // Pages
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import WorkPage from "./pages/WorkPage";     // ← naya import
+import WorkPage from "./pages/WorkPage";
 
 const App = () => {
   useScripts();
 
   return (
     <Router>
+      <ScrollToTopOnRoute />   {/* ← Ye line add karo — Router ke andar, page-wrapper ke bahar */}
+      
       <div className="page-wrapper">
         <Preloader />
         <Header />
@@ -31,7 +34,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/work" element={<WorkPage />} />       {/* ← naya route */}
+              <Route path="/work" element={<WorkPage />} />
             </Routes>
             <Footer />
           </div>
